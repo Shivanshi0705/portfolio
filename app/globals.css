@@ -1,26 +1,151 @@
 @import "tailwindcss";
 
+/* ---------- Base Styles ---------- */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-sans: var(--font-space-grotesk);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-space-grotesk), sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(59, 130, 246, 0.12), transparent 32%),
+    linear-gradient(180deg, #081120 0%, #050816 45%, #040712 100%);
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---------- Intro Animation ---------- */
+
+.intro-overlay {
+  animation: introFadeOut 0.8s ease forwards;
+  animation-delay: 2.8s;
+  background:
+    radial-gradient(circle at center, rgba(30, 64, 175, 0.18), transparent 38%),
+    linear-gradient(180deg, #07101d 0%, #050816 100%);
+}
+
+.intro-phrase {
+  position: relative;
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(24px) scale(0.985);
+  filter: blur(10px);
+  letter-spacing: -0.03em;
+  color: rgba(255, 255, 255, 0.96);
+  text-shadow:
+    0 0 1px rgba(255, 255, 255, 0.15),
+    0 0 24px rgba(96, 165, 250, 0.08);
+  animation: introReveal 1.05s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: transform, opacity, filter;
+}
+
+/* subtle glow behind the text */
+.intro-phrase::before {
+  content: "";
+  position: absolute;
+  inset: -0.2em -0.35em;
+  background: radial-gradient(
+    circle,
+    rgba(96, 165, 250, 0.14) 0%,
+    rgba(96, 165, 250, 0.05) 38%,
+    transparent 70%
+  );
+  filter: blur(18px);
+  opacity: 0;
+  animation: introGlow 1.4s ease-out 0.2s forwards;
+  pointer-events: none;
+}
+
+/* spotlight sweep */
+.intro-phrase::after {
+  content: "";
+  position: absolute;
+  top: -18%;
+  bottom: -18%;
+  left: -18%;
+  width: 22%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.04) 20%,
+    rgba(255, 255, 255, 0.18) 45%,
+    rgba(147, 197, 253, 0.32) 55%,
+    rgba(255, 255, 255, 0.14) 72%,
+    transparent 100%
+  );
+  transform: skewX(-20deg) translateX(0);
+  opacity: 0;
+  filter: blur(3px);
+  mix-blend-mode: screen;
+  animation: introSweep 1.15s cubic-bezier(0.19, 1, 0.22, 1) 0.75s forwards;
+  pointer-events: none;
+}
+
+/* ---------- Keyframes ---------- */
+
+@keyframes introReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(0.985);
+    filter: blur(10px);
+  }
+  55% {
+    opacity: 1;
+    transform: translateY(4px) scale(0.995);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes introGlow {
+  0% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  45% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.75;
+    transform: scale(1);
+  }
+}
+
+@keyframes introSweep {
+  0% {
+    transform: skewX(-20deg) translateX(0);
+    opacity: 0;
+  }
+  18% {
+    opacity: 0.85;
+  }
+  70% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: skewX(-20deg) translateX(560%);
+    opacity: 0;
+  }
+}
+
+@keyframes introFadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
