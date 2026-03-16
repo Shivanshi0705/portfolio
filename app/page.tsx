@@ -267,7 +267,7 @@ export default function Home() {
                   </a>
 
                   <a
-                    href="/resume.pdf"
+                    href="/resume_swe.pdf"
                     target="_blank"
                     rel="noreferrer"
                     className={whiteButton}
