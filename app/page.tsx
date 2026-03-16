@@ -182,6 +182,15 @@ export default function Home() {
     "Interaction Design",
   ];
 
+  const careerFlowTags = [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "Dashboard UI",
+    "LocalStorage",
+  ];
+
   const whiteButton =
     "rounded-[1.65rem] border border-white/20 bg-white text-slate-900 px-6 py-3 font-medium shadow-[0_10px_30px_rgba(255,255,255,0.12)] transition duration-300 hover:-translate-y-1 hover:scale-[1.01] hover:bg-white/90 hover:shadow-[0_14px_38px_rgba(255,255,255,0.22)]";
 
@@ -644,146 +653,215 @@ I enjoy combining technical development with thoughtful design and strong collab
           </section>
 
           <section id="projects" className="py-24">
-            <div className="mb-10">
-              <p className="text-sm uppercase tracking-[0.34em] text-white/40">
-                Projects
-              </p>
-              <h2 className="mt-4 text-5xl font-semibold tracking-[-0.03em] text-white md:text-6xl">
-                Selected work
-              </h2>
-              <p className="mt-5 max-w-3xl text-lg leading-8 text-white/60">
-                Technical, research, and design work focused on usability,
-                fairness, and structured problem-solving.
-              </p>
-            </div>
+  <div className="mb-10">
+    <p className="text-sm uppercase tracking-[0.34em] text-white/40">
+      Projects
+    </p>
+    <h2 className="mt-4 text-5xl font-semibold tracking-[-0.03em] text-white md:text-6xl">
+      Selected work
+    </h2>
+    <p className="mt-5 max-w-3xl text-lg leading-8 text-white/60">
+      Technical, research, and design work focused on usability,
+      fairness, and structured problem-solving.
+    </p>
+  </div>
 
-            <div className="grid gap-6 lg:grid-cols-[1.02fr_0.98fr]">
-              <article className="rounded-[2rem] border border-white/8 bg-gradient-to-br from-white/[0.04] to-blue-500/[0.05] p-8 shadow-[0_0_60px_rgba(37,99,235,0.08)] transition duration-300 hover:-translate-y-1 hover:border-blue-300/20 hover:shadow-[0_0_65px_rgba(37,99,235,0.14)]">
-                <div className="flex items-start justify-between gap-5">
-                  <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-sm text-white/70">
-                    Android • Firebase
-                  </span>
-                </div>
+  <div className="grid gap-6 md:grid-cols-2">
+    <article className="flex h-full flex-col rounded-[2rem] border border-white/8 bg-gradient-to-br from-white/[0.04] to-blue-500/[0.05] p-8 shadow-[0_0_60px_rgba(37,99,235,0.08)] transition duration-300 hover:-translate-y-1 hover:border-blue-300/20 hover:shadow-[0_0_65px_rgba(37,99,235,0.14)]">
+      <div className="flex items-start justify-between gap-5">
+        <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-sm text-white/70">
+          Android • Firebase
+        </span>
+      </div>
 
-                <h3 className="mt-6 text-4xl font-semibold tracking-[-0.03em] text-white">
-                  FairChance Event Lottery System
-                </h3>
+      <h3 className="mt-6 text-4xl font-semibold tracking-[-0.03em] text-white">
+        FairChance Event Lottery System
+      </h3>
 
-                <p className="mt-5 max-w-2xl text-lg leading-8 text-white/65">
-                  An Android application designed to make event registration
-                  more fair through lottery-based participant selection,
-                  waitlist logic, and Firebase-backed workflows.
-                </p>
+      <p className="mt-5 text-lg leading-8 text-white/65">
+        An Android application designed to make event registration more fair
+        through lottery-based participant selection, waitlist logic, and
+        Firebase-backed workflows.
+      </p>
 
-                <div className="mt-6 flex flex-wrap gap-3">
-                  {fairChanceTags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-white/75"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+      <div className="mt-6 flex flex-wrap gap-3">
+        {fairChanceTags.map((tag) => (
+          <span
+            key={tag}
+            className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-white/75"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
 
-                <div className="mt-8 border-t border-white/10 pt-6">
-                  <p className="mb-3 font-semibold text-white">Highlights</p>
-                  <ul className="space-y-2 text-sm leading-7 text-white/65">
-                    <li>• Implemented lottery-based participant selection logic</li>
-                    <li>• Built Firebase-backed event and user data workflows</li>
-                    <li>• Developed waitlist and role-based management flows</li>
-                    <li>• Contributed to Android UI structure and user experience</li>
-                    <li>• Supported testing and software design decisions</li>
-                  </ul>
-                </div>
+      <div className="mt-8 border-t border-white/10 pt-6">
+        <p className="mb-3 font-semibold text-white">Highlights</p>
+        <ul className="space-y-2 text-sm leading-7 text-white/65">
+          <li>• Implemented lottery-based participant selection logic</li>
+          <li>• Built Firebase-backed event and user data workflows</li>
+          <li>• Developed waitlist and role-based management flows</li>
+          <li>• Contributed to Android UI structure and user experience</li>
+          <li>• Supported testing and software design decisions</li>
+        </ul>
+      </div>
 
-                <div className="mt-8 flex flex-wrap gap-4">
-                  <a
-                    href="https://github.com/CMPUT301F25binary1/binary1"
-                    target="_blank"
-                    rel="noreferrer"
-                    className={whiteButton}
-                  >
-                    GitHub Repo
-                  </a>
+      <div className="mt-auto flex flex-wrap gap-4 pt-8">
+        <a
+          href="https://github.com/CMPUT301F25binary1/binary1"
+          target="_blank"
+          rel="noreferrer"
+          className={whiteButton}
+        >
+          GitHub Repo
+        </a>
 
-                  <a
-                    href="https://github.com/CMPUT301F25binary1/binary1/wiki/Final-UI-Mockup-Storyboard"
-                    target="_blank"
-                    rel="noreferrer"
-                    className={whiteButton}
-                  >
-                    Look at UI Mockup
-                  </a>
-                </div>
-              </article>
+        <a
+          href="https://github.com/CMPUT301F25binary1/binary1/wiki/Final-UI-Mockup-Storyboard"
+          target="_blank"
+          rel="noreferrer"
+          className={whiteButton}
+        >
+          Look at UI Mockup
+        </a>
+      </div>
+    </article>
 
-              <div className="grid gap-6">
-                <article className="rounded-[2rem] border border-white/8 bg-gradient-to-br from-white/[0.03] to-blue-500/[0.04] p-7 transition duration-300 hover:-translate-y-1 hover:border-blue-300/20 hover:shadow-[0_0_55px_rgba(37,99,235,0.10)]">
-                  <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-sm text-white/70">
-                    HCI • UX Evaluation
-                  </span>
+    <article className="flex h-full flex-col rounded-[2rem] border border-white/8 bg-gradient-to-br from-white/[0.03] to-blue-500/[0.04] p-8 transition duration-300 hover:-translate-y-1 hover:border-blue-300/20 hover:shadow-[0_0_55px_rgba(37,99,235,0.10)]">
+      <span className="w-fit rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-sm text-white/70">
+        Web App • Product Design
+      </span>
 
-                  <h3 className="mt-5 text-3xl font-semibold tracking-[-0.02em] text-white">
-                    Dreamscape Heuristic Evaluation
-                  </h3>
+      <h3 className="mt-5 text-3xl font-semibold tracking-[-0.02em] text-white">
+        CareerFlow Job Application Tracker
+      </h3>
 
-                  <p className="mt-4 text-lg leading-8 text-white/65">
-                    Evaluated a game-based literacy platform using Nielsen
-                    heuristics and interface analysis to identify usability
-                    issues and recommend clearer interaction improvements.
-                  </p>
+      <p className="mt-4 text-lg leading-8 text-white/65">
+        A modern job application and networking tracker built to help users
+        organize recruiting workflows, monitor pipeline stages, manage
+        contacts, and view dashboard insights in one place.
+      </p>
 
-                  <div className="mt-5 flex flex-wrap gap-3">
-                    {dreamscapeTags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-white/75"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </article>
+      <div className="mt-5 flex flex-wrap gap-3">
+        {careerFlowTags.map((tag) => (
+          <span
+            key={tag}
+            className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-white/75"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
 
-                <article className="rounded-[2rem] border border-white/8 bg-gradient-to-br from-white/[0.03] to-blue-500/[0.04] p-7 transition duration-300 hover:-translate-y-1 hover:border-blue-300/20 hover:shadow-[0_0_55px_rgba(37,99,235,0.10)]">
-                  <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-sm text-white/70">
-                    Product Design • Prototyping
-                  </span>
+      <div className="mt-6 border-t border-white/10 pt-6">
+        <p className="mb-3 font-semibold text-white">Highlights</p>
+        <ul className="space-y-2 text-sm leading-7 text-white/65">
+          <li>• Built a dashboard-first experience for tracking recruiting progress</li>
+          <li>• Added application, contact, and recent activity management flows</li>
+          <li>• Developed a modular component architecture using React, Next.js, and reusable UI components</li>
+          <li>• Implemented application pipeline tracking across stages like Applied, Interview, Offer, and Rejected</li>
+          <li>• Built dashboard analytics including interview rate, offer rate, and activity insights</li>
+        </ul>
+      </div>
 
-                  <h3 className="mt-5 text-3xl font-semibold tracking-[-0.02em] text-white">
-                    Academic Advising Prototype
-                  </h3>
+      <div className="mt-auto flex flex-wrap gap-4 pt-8">
+        <a
+          href="https://github.com/Shivanshi0705/careerflow.git"
+          target="_blank"
+          rel="noreferrer"
+          className={whiteButton}
+        >
+          GitHub Repo
+        </a>
 
-                  <p className="mt-4 text-lg leading-8 text-white/65">
-                    Designed a low-fidelity planning system to help students and
-                    advisors better understand academic standing, progress, and
-                    multi-year course planning decisions.
-                  </p>
+        <a
+          href="https://careerflow-app.vercel.app/login"
+          target="_blank"
+          rel="noreferrer"
+          className={whiteButton}
+        >
+          Live Project
+        </a>
+      </div>
+    </article>
 
-                  <div className="mt-5 flex flex-wrap gap-3">
-                    {advisingTags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-white/75"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+    <article className="flex h-full flex-col rounded-[2rem] border border-white/8 bg-gradient-to-br from-white/[0.03] to-blue-500/[0.04] p-8 transition duration-300 hover:-translate-y-1 hover:border-blue-300/20 hover:shadow-[0_0_55px_rgba(37,99,235,0.10)]">
+      <span className="w-fit rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-sm text-white/70">
+        HCI • UX Evaluation
+      </span>
 
-                  <a
-                    href="https://drive.google.com/drive/folders/1iYBN-YFkXOFA309zs3Q2w2-DeRbrpzP1?usp=sharing"
-                    target="_blank"
-                    rel="noreferrer"
-                    className={`mt-6 inline-block ${whiteButton}`}
-                  >
-                    Open UI/UX Folder
-                  </a>
-                </article>
-              </div>
-            </div>
-          </section>
+      <h3 className="mt-5 text-3xl font-semibold tracking-[-0.02em] text-white">
+        Dreamscape Heuristic Evaluation
+      </h3>
+
+      <p className="mt-4 text-lg leading-8 text-white/65">
+        Evaluated a game-based literacy platform using Nielsen heuristics and
+        interface analysis to identify usability issues and recommend clearer
+        interaction improvements.
+      </p>
+
+      <div className="mt-5 flex flex-wrap gap-3">
+        {dreamscapeTags.map((tag) => (
+          <span
+            key={tag}
+            className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-white/75"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+
+      <div className="mt-auto flex flex-wrap gap-4 pt-8">
+        <a
+          href="https://drive.google.com/drive/folders/1uxMgcphiJcaLTWjhZku5qYoBCMOx9bVW"
+          target="_blank"
+          rel="noreferrer"
+          className={whiteButton}
+        >
+          View Evaluation
+        </a>
+      </div>
+    </article>
+
+    <article className="flex h-full flex-col rounded-[2rem] border border-white/8 bg-gradient-to-br from-white/[0.03] to-blue-500/[0.04] p-8 transition duration-300 hover:-translate-y-1 hover:border-blue-300/20 hover:shadow-[0_0_55px_rgba(37,99,235,0.10)]">
+      <span className="w-fit rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-sm text-white/70">
+        Product Design • Prototyping
+      </span>
+
+      <h3 className="mt-5 text-3xl font-semibold tracking-[-0.02em] text-white">
+        Academic Advising Prototype
+      </h3>
+
+      <p className="mt-4 text-lg leading-8 text-white/65">
+        Designed a low-fidelity planning system to help students and advisors
+        better understand academic standing, progress, and multi-year course
+        planning decisions.
+      </p>
+
+      <div className="mt-5 flex flex-wrap gap-3">
+        {advisingTags.map((tag) => (
+          <span
+            key={tag}
+            className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-white/75"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+
+      <div className="mt-auto flex flex-wrap gap-4 pt-8">
+        <a
+          href="https://drive.google.com/drive/folders/1Kt_g-DT6uV6WLnP5BFmZvK3WQq_H1j57"
+          target="_blank"
+          rel="noreferrer"
+          className={whiteButton}
+        >
+          View Paper Prototype
+        </a>
+      </div>
+    </article>
+  </div>
+</section>
 
           <section id="coursework" className="py-24">
             <div className="mb-10">
