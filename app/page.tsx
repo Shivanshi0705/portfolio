@@ -17,7 +17,7 @@ export default function Home() {
 
   const skillGroups = [
     {
-      title: "Languages",
+      title: "Languages & Development",
       icon: "01",
       items: [
         "Java",
@@ -26,27 +26,44 @@ export default function Home() {
         "JavaScript",
         "TypeScript",
         "HTML/CSS",
-      ],
-    },
-    {
-      title: "Development",
-      icon: "02",
-      items: [
+        "React",
+        "Next.js",
         "Android Development",
         "Android Studio",
         "Firebase",
-        "React",
-        "Next.js",
         "Git",
-        "Testing",
-        "OOP",
         "Software Architecture",
+        "Testing",
       ],
     },
     {
-      title: "Design",
+      title: "AI & Data",
+      icon: "02",
+      items: [
+        "Anthropic Claude API",
+        "LLM Prompt Engineering",
+        "Prompt Iteration",
+        "RAG concepts",
+        "Excel",
+        "Tableau",
+        "Data Analysis",
+        "Data Cleaning",
+        "Data Visualization",
+        "Statistics",
+        "Trend Analysis",
+        "Reporting",
+      ],
+    },
+    {
+      title: "Product & Design",
       icon: "03",
       items: [
+        "PRD Writing",
+        "Roadmapping",
+        "Product Strategy",
+        "Success Metrics",
+        "Stakeholder Communication",
+        "Agile/Scrum",
         "Wireframing",
         "Prototyping",
         "UX Research",
@@ -58,19 +75,18 @@ export default function Home() {
       ],
     },
     {
-      title: "Analytics",
+      title: "Leadership & Collaboration",
       icon: "04",
       items: [
-        "Excel",
-        "Tableau",
-        "Data Analysis",
-        "Data Cleaning",
-        "Data Visualization",
-        "Statistics",
-        "Trend Analysis",
-        "Reporting",
+        "Team Coordination",
+        "Mentorship",
+        "Cross-Functional Collaboration",
+        "Decision-Making",
+        "Communication",
         "Documentation",
         "Insights Communication",
+        "Accountability",
+        "Community Building",
       ],
     },
   ];
@@ -189,7 +205,50 @@ export default function Home() {
     "Tailwind CSS",
     "Dashboard UI",
     "LocalStorage",
+    "Anthropic API",
+    "LLM Prompt Engineering",
   ];
+
+  const awardsData: {
+    issuer: string;
+    title: string;
+    context: string;
+    link: { label: string; href: string } | null;
+  }[] = [
+    {
+      issuer: "University of Alberta · 2025",
+      title: "Resident Assistant of the Year",
+      context:
+        "Selected as 1 of approximately 80 Resident Assistants for demonstrated leadership, mentorship, and crisis response across a residence community.",
+      link: null,
+    },
+    {
+      issuer: "Google (via Coursera) · 2026",
+      title: "Google Project Management Professional Certificate",
+      context:
+        "7-course specialization covering project initiation, planning, execution, agile methodology, and applied capstone work.",
+      link: {
+        label: "Verify",
+        href: "https://www.coursera.org/verify/professional-cert/P2KVIB7QSSGN",
+      },
+    },
+    {
+      issuer: "University of Alberta · 2023",
+      title: "International Admission Scholarship",
+      context:
+        "Merit-based award recognizing academic excellence at the point of admission.",
+      link: null,
+    },
+    {
+      issuer: "University of Alberta · 2023",
+      title: "Regional Excellence Scholarship",
+      context:
+        "Merit-based award recognizing academic and extracurricular excellence within a defined geographic region.",
+      link: null,
+    },
+  ];
+
+  const altaMlTags = ["AI"];
 
   const whiteButton =
     "rounded-[1.65rem] border border-white/20 bg-white text-slate-900 px-6 py-3 font-medium shadow-[0_10px_30px_rgba(255,255,255,0.12)] transition duration-300 hover:-translate-y-1 hover:scale-[1.01] hover:bg-white/90 hover:shadow-[0_14px_38px_rgba(255,255,255,0.22)]";
@@ -218,6 +277,7 @@ export default function Home() {
                 ["#experience", "Experience"],
                 ["#skills", "Skills"],
                 ["#projects", "Projects"],
+                ["#awards", "Awards"],
                 ["#coursework", "Courses"],
               ].map(([href, label]) => (
                 <a
@@ -264,15 +324,6 @@ export default function Home() {
                     className={whiteButton}
                   >
                     LinkedIn
-                  </a>
-
-                  <a
-                    href="/resume_swe.pdf"
-                    target="_blank"
-                    rel="noreferrer"
-                    className={whiteButton}
-                  >
-                    Download Resume
                   </a>
                 </div>
               </div>
@@ -321,22 +372,32 @@ export default function Home() {
                         </span>
                         ,
                         {"\n  "}
-                        <span className="text-cyan-300">interests</span>
+                        <span className="text-cyan-300">focus</span>
                         <span className="text-white/70">:</span>{" "}
                         <span className="text-white/80">[</span>
-                        <span className="text-emerald-300">"Software"</span>,{" "}
-                        <span className="text-emerald-300">"UX"</span>,{" "}
-                        <span className="text-emerald-300">"Analytics"</span>
+                        <span className="text-emerald-300">"AI Products"</span>
+                        ,{" "}
+                        <span className="text-emerald-300">"Data"</span>,{" "}
+                        <span className="text-emerald-300">
+                          "Product Management"
+                        </span>
                         <span className="text-white/80">]</span>,
                         {"\n  "}
                         <span className="text-cyan-300">graduation</span>
                         <span className="text-white/70">:</span>{" "}
-                        <span className="text-orange-300">2027</span>,
+                        <span className="text-orange-300">2028</span>,
                         {"\n  "}
                         <span className="text-cyan-300">building</span>
                         <span className="text-white/70">:</span>{" "}
                         <span className="text-emerald-300">
-                          "Thoughtful digital experiences"
+                          "AI-powered tools that solve real problems"
+                        </span>
+                        ,
+                        {"\n  "}
+                        <span className="text-cyan-300">incoming</span>
+                        <span className="text-white/70">:</span>{" "}
+                        <span className="text-emerald-300">
+                          "AI Discovery Associate @ AltaML GovLab.ai"
                         </span>
                         ,
                         {"\n  "}
@@ -365,22 +426,18 @@ export default function Home() {
                 </p>
 
                 <h2 className="mt-4 max-w-4xl text-5xl font-semibold leading-tight tracking-[-0.03em] text-white md:text-6xl">
-                  Building at the intersection of software, design, and impact.
+                  Building at the intersection of AI, data, and product.
                 </h2>
 
                 <p className="mt-8 max-w-3xl whitespace-pre-line text-lg leading-9 text-white/65">
-                  {`I am a Computer Science student at the University of Alberta with a strong interest in UI/UX design, data analysis, and leadership.
+                  {`I'm a Computer Science student at the University of Alberta focused on AI-powered products, data analysis, and product thinking. I'm joining AltaML's GovLab.ai program this fall as an AI Discovery Associate, working on LLM-assisted content generation.
 
-Through my work in software projects and collaborative teams, I focus on designing user-centered digital experiences and using data to better understand problems and inform decisions.
-
-I enjoy combining technical development with thoughtful design and strong collaboration, creating systems that are both functional and intuitive while contributing meaningfully within teams.`}
+My recent work spans an AI resume tailoring product I designed and shipped end-to-end (CareerFlow), risk and operations analytics at Bharti Airtel, and leading a team of 14 Resident Advisors at the University of Alberta.`}
                 </p>
 
                 <p className="mt-6 max-w-3xl text-lg leading-9 text-white/65">
-                  I care about creating thoughtful systems and digital
-                  experiences, whether that means building an app, improving a
-                  user flow, or translating technical ideas into stronger
-                  product decisions.
+                  I care about building thoughtful software that connects
+                  technical execution to real product decisions.
                 </p>
               </div>
 
@@ -475,6 +532,114 @@ I enjoy combining technical development with thoughtful design and strong collab
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <div>
                     <p className="text-sm uppercase tracking-[0.24em] text-white/40">
+                      Sept 2026 — Dec 2026 (Incoming)
+                    </p>
+                    <h3 className="mt-3 text-3xl font-semibold tracking-[-0.02em] text-white">
+                      AI Discovery Associate
+                    </h3>
+                    <p className="mt-2 text-white/55">
+                      AltaML · GovLab.ai · Edmonton, AB
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-5 flex flex-wrap gap-3">
+                  {altaMlTags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-white/75"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </article>
+
+              <article
+                className={`${sectionCard} from-white/[0.03] to-blue-500/[0.04]`}
+              >
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div>
+                    <p className="text-sm uppercase tracking-[0.24em] text-white/40">
+                      May 2025 — Aug 2025
+                    </p>
+                    <h3 className="mt-3 text-3xl font-semibold tracking-[-0.02em] text-white">
+                      Risk Management, Strategy &amp; Operations Intern
+                    </h3>
+                    <p className="mt-2 text-white/55">
+                      Bharti Airtel • Gurugram, India
+                    </p>
+                  </div>
+
+                  <span className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-white/70">
+                    Risk &amp; Strategy
+                  </span>
+                </div>
+
+                <div className="mt-6 space-y-3 text-white/65">
+                  <p>
+                    Analyzed subscriber and account-level data in SQL and
+                    Python to surface risk drivers informing retention
+                    strategy.
+                  </p>
+                  <p>
+                    Partnered with the risk strategy team on data-driven
+                    approval-threshold reviews to reduce bad-debt exposure.
+                  </p>
+                  <p>
+                    Automated weekly KPI reporting in SQL, cutting manual
+                    reporting effort for the operations team.
+                  </p>
+                </div>
+              </article>
+
+              <article
+                className={`${sectionCard} from-white/[0.03] to-blue-500/[0.03]`}
+              >
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div>
+                    <p className="text-sm uppercase tracking-[0.24em] text-white/40">
+                      May 2024 — Aug 2024
+                    </p>
+                    <h3 className="mt-3 text-3xl font-semibold tracking-[-0.02em] text-white">
+                      Data Analyst Intern
+                    </h3>
+                    <p className="mt-2 text-white/55">
+                      Reliance Jio • Delhi, India
+                    </p>
+                  </div>
+
+                  <span className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-white/70">
+                    Industry
+                  </span>
+                </div>
+
+                <div className="mt-6 space-y-3 text-white/65">
+                  <p>
+                    Analyzed operational and customer datasets to identify
+                    reporting needs, trends, and workflow inefficiencies.
+                  </p>
+                  <p>
+                    Cleaned, validated, and organized structured data to improve
+                    reporting quality and clarity.
+                  </p>
+                  <p>
+                    Contributed to Excel-based reporting workflows and
+                    communicated findings for better business decisions.
+                  </p>
+                  <p>
+                    Collaborated across teams in a fast-paced environment using
+                    quantitative and analytical thinking.
+                  </p>
+                </div>
+              </article>
+
+              <article
+                className={`${sectionCard} from-white/[0.03] to-blue-500/[0.03]`}
+              >
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div>
+                    <p className="text-sm uppercase tracking-[0.24em] text-white/40">
                       Aug 2025 — Present
                     </p>
                     <h3 className="mt-3 text-3xl font-semibold tracking-[-0.02em] text-white">
@@ -529,47 +694,6 @@ I enjoy combining technical development with thoughtful design and strong collab
                 </div>
               </article>
 
-              <article
-                className={`${sectionCard} from-white/[0.03] to-blue-500/[0.03]`}
-              >
-                <div className="flex flex-wrap items-center justify-between gap-3">
-                  <div>
-                    <p className="text-sm uppercase tracking-[0.24em] text-white/40">
-                      May 2024 — Aug 2024
-                    </p>
-                    <h3 className="mt-3 text-3xl font-semibold tracking-[-0.02em] text-white">
-                      Data Analyst Intern
-                    </h3>
-                    <p className="mt-2 text-white/55">
-                      Reliance Jio • Delhi, India
-                    </p>
-                  </div>
-
-                  <span className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-white/70">
-                    Industry
-                  </span>
-                </div>
-
-                <div className="mt-6 space-y-3 text-white/65">
-                  <p>
-                    Analyzed operational and customer datasets to identify
-                    reporting needs, trends, and workflow inefficiencies.
-                  </p>
-                  <p>
-                    Cleaned, validated, and organized structured data to improve
-                    reporting quality and clarity.
-                  </p>
-                  <p>
-                    Contributed to Excel-based reporting workflows and
-                    communicated findings for better business decisions.
-                  </p>
-                  <p>
-                    Collaborated across teams in a fast-paced environment using
-                    quantitative and analytical thinking.
-                  </p>
-                </div>
-              </article>
-
               <article className="h-full rounded-[2rem] border border-white/8 bg-gradient-to-br from-white/[0.03] to-blue-500/[0.05] p-8 transition duration-300 hover:-translate-y-1 hover:border-blue-300/20 hover:shadow-[0_0_55px_rgba(37,99,235,0.08)]">
                 <p className="text-sm uppercase tracking-[0.34em] text-white/40">
                   Highlights
@@ -577,29 +701,24 @@ I enjoy combining technical development with thoughtful design and strong collab
 
                 <div className="mt-5 space-y-4 text-white/65 leading-8">
                   <p>
-                    I combine technical development, user-centered design, and
-                    data analysis to build thoughtful and practical digital
-                    solutions.
+                    I work at the intersection of AI products, data
+                    analytics, and product thinking — building things
+                    end-to-end from problem to shipped feature, including a
+                    live LLM-powered web app I shipped in summer 2026
+                    (CareerFlow).
                   </p>
                   <p>
-                    My work spans software projects, analytics, and student
-                    leadership, where collaboration, structure, and
-                    communication drive meaningful outcomes.
+                    My internships have spanned data analytics at Reliance
+                    Jio and risk strategy at Bharti Airtel, and my current
+                    student leadership role coordinates a team of 14 across a
+                    600+ resident building.
                   </p>
                   <p>
-                    I enjoy solving problems where technology, people, and
-                    design intersect, especially when the goal is to make an
-                    experience more intuitive, useful, and impactful.
-                  </p>
-                  <p>
-                    Across academic projects, internships, and leadership roles,
-                    I bring a balanced approach that values execution,
-                    organization, empathy, and strong attention to detail.
-                  </p>
-                  <p>
-                    I am especially interested in opportunities where I can
-                    contribute to software, product, or analytics work while
-                    continuing to grow as a thoughtful builder and collaborator.
+                    I care about applying AI thoughtfully — preserving
+                    honesty, surfacing limitations, and building tools people
+                    can actually trust. I&apos;m especially interested in
+                    roles that connect technical AI work to real product
+                    decisions.
                   </p>
                 </div>
               </article>
@@ -729,7 +848,7 @@ I enjoy combining technical development with thoughtful design and strong collab
 
     <article className="flex h-full flex-col rounded-[2rem] border border-white/8 bg-gradient-to-br from-white/[0.03] to-blue-500/[0.04] p-8 transition duration-300 hover:-translate-y-1 hover:border-blue-300/20 hover:shadow-[0_0_55px_rgba(37,99,235,0.10)]">
       <span className="w-fit rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-sm text-white/70">
-        Web App • Product Design
+        Web App • AI Product
       </span>
 
       <h3 className="mt-5 text-3xl font-semibold tracking-[-0.02em] text-white">
@@ -737,9 +856,10 @@ I enjoy combining technical development with thoughtful design and strong collab
       </h3>
 
       <p className="mt-4 text-lg leading-8 text-white/65">
-        A modern job application and networking tracker built to help users
-        organize recruiting workflows, monitor pipeline stages, manage
-        contacts, and view dashboard insights in one place.
+        A job application tracker with an AI-powered resume bullet tailoring
+        feature: paste any job description and get the 5 most relevant bullets
+        from a master bullet bank, rewritten to match the JD, scored 0–100,
+        with reasoning and missing-keyword detection.
       </p>
 
       <div className="mt-5 flex flex-wrap gap-3">
@@ -756,11 +876,11 @@ I enjoy combining technical development with thoughtful design and strong collab
       <div className="mt-6 border-t border-white/10 pt-6">
         <p className="mb-3 font-semibold text-white">Highlights</p>
         <ul className="space-y-2 text-sm leading-7 text-white/65">
-          <li>• Built a dashboard-first experience for tracking recruiting progress</li>
-          <li>• Added application, contact, and recent activity management flows</li>
-          <li>• Developed a modular component architecture using React, Next.js, and reusable UI components</li>
-          <li>• Implemented application pipeline tracking across stages like Applied, Interview, Offer, and Rejected</li>
-          <li>• Built dashboard analytics including interview rate, offer rate, and activity insights</li>
+          <li>• Shipped LLM-powered resume bullet tailoring via Anthropic Claude API</li>
+          <li>• Designed structured prompt with skill-to-requirement mapping and calibrated relevance scoring</li>
+          <li>• Iterated prompt from v1 (surface keyword swaps) to v2 (substantive reframing, honest score range)</li>
+          <li>• Built master bullet bank with CRUD, tag filtering, and experience grouping</li>
+          <li>• Architected server-side API key handling; deployed to Vercel with production env vars</li>
         </ul>
       </div>
 
@@ -862,6 +982,52 @@ I enjoy combining technical development with thoughtful design and strong collab
     </article>
   </div>
 </section>
+
+          <section id="awards" className="py-24">
+            <div className="mb-10">
+              <p className="text-sm uppercase tracking-[0.34em] text-white/40">
+                Awards &amp; Certifications
+              </p>
+              <h2 className="mt-4 text-5xl font-semibold tracking-[-0.03em] text-white md:text-6xl">
+                Recognition &amp; credentials
+              </h2>
+              <p className="mt-5 max-w-3xl text-lg leading-8 text-white/60">
+                Awards, scholarships, and professional certifications earned
+                across leadership, academics, and applied skills.
+              </p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2">
+              {awardsData.map((entry) => (
+                <article
+                  key={entry.title}
+                  className="flex h-full flex-col rounded-[2rem] border border-white/8 bg-gradient-to-br from-white/[0.03] to-blue-500/[0.04] p-8 transition duration-300 hover:-translate-y-1 hover:border-blue-300/20 hover:shadow-[0_0_55px_rgba(37,99,235,0.10)]"
+                >
+                  <p className="text-sm uppercase tracking-[0.24em] text-white/40">
+                    {entry.issuer}
+                  </p>
+                  <h3 className="mt-3 text-2xl font-semibold tracking-[-0.02em] text-white">
+                    {entry.title}
+                  </h3>
+                  <p className="mt-4 text-lg leading-8 text-white/65">
+                    {entry.context}
+                  </p>
+                  {entry.link && (
+                    <div className="mt-auto pt-8">
+                      <a
+                        href={entry.link.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={whiteButton}
+                      >
+                        {entry.link.label}
+                      </a>
+                    </div>
+                  )}
+                </article>
+              ))}
+            </div>
+          </section>
 
           <section id="coursework" className="py-24">
             <div className="mb-10">
